@@ -10,7 +10,7 @@ The challenge is to develop a system that accurately detects the presence and di
 hand-drawn component wiring diagram
 ![zapojeni_nakres](https://github.com/janobsivac/BPC-DE1-parking_system/assets/159461221/e17b9082-eb5e-48d2-90bc-48d223a61b78)
 1. Pulse generation:
-    - The button (BTNC) activates the pulse generator (part of "trigger_instance"), which generates pulses to trigger the ultrasonic sensor.
+    - The button (BTNC) resets the pulse generator (part of "trigger_instance"), which generates pulses to trigger the ultrasonic sensor.
     - The generator uses a clock (CLK100MHZ) that is divided into the desired frequency (output "clk" of "clock_instance").
 2. Emitting the ultrasonic signal:
     - When the generator is started, the sensor emits ultrasonic waves into the space.
@@ -18,8 +18,7 @@ hand-drawn component wiring diagram
     - The sensor also keeps track of the time when these waves are returned back as echoes (input "echo_in" to the "DistanceCalculation" block).
     - The time between sending and receiving the signal is measured, allowing distance calculation. This time is converted to distance based on the speed of sound in air.
 4. Distance calculation and display:
-    - The calculated distance is then processed and displayed
-    - The segment display (LED[8:0]) and segment_data[6:0] indicate that the distance may be displayed using a seven segment display.
+    - The calculated distance is then processed and displayed on the seven-segment display and LED
 ## Software description
 ![schema](https://github.com/janobsivac/BPC-DE1-parking_system/assets/159461221/dbc87e6d-cc1c-43ba-a0de-394e238cb112)
 - ```clock_instance``` - changes clock frekvency
