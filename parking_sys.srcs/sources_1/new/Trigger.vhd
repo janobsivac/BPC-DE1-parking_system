@@ -25,7 +25,7 @@ begin
     p_clk_enable : process(clk) is
     begin
     
-      if (rising_edge(clk) and en_in = '1') then 
+      if (rising_edge(clk) and en_in = '1') then  --reakce na příchozí en_in a rst tlačítko
         if rst = '1' then
             trigger_counter <= 0;
 
