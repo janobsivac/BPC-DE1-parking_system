@@ -7,7 +7,7 @@
 ## Theoretical description and explanation
 The challenge is to develop a system that accurately detects the presence and distance of vehicles in parking spaces using ultrasonic sensors (HS-SR04). The data from these sensors need to be processed to determine parking space availability, which will then be displayed visually using LEDs and numerically on a 7-segment display on the Nexys A7 FPGA board.
 ## Hardware description of demo application
-Hand-drawn wiring diagram
+hand-drawn component wiring diagram
 ![zapojeni_nakres](https://github.com/janobsivac/BPC-DE1-project/assets/159461221/5da7149d-69ce-4e3b-bc89-ac0d5fdfa3b6)
 1. Pulse generation:
     - The button (BTNC) activates the pulse generator (part of "trigger_instance"), which generates pulses to trigger the ultrasonic sensor.
@@ -28,7 +28,14 @@ Hand-drawn wiring diagram
 - ```distance_instance``` - solves the echo response and calculates the measured distance
 - ```top_level``` - connects the individual components
 ## Simulations
-```trigger_instance```
+testbench where the trigger works, but only generates short pulses of 10ns and we need 10us
+![TB1](https://github.com/janobsivac/BPC-DE1-parking_system/assets/159461221/3dfdc7b8-fd3a-484f-8e4f-7bcc0ad043a5)
+
+testbench of the clockConvert module, which changes the frequency and the output signal is 10us
+![TB2](https://github.com/janobsivac/BPC-DE1-parking_system/assets/159461221/bcab58ba-b9cf-429c-ad50-13a51ca10506)
+
+testbench again of the trigger to which the converted clock is connected and the output of the trigger works again and produces the correct long trigger pulses of 10us
+![TB3](https://github.com/janobsivac/BPC-DE1-parking_system/assets/159461221/6aef8f97-3d93-4952-9a33-fdd8293ab495)
 ## List of components
 ### Nexys A7 50T - Main component
 The Nexys A7-50T board is Digilent's popular development platform, designed primarily for electronics and digital design education and projects. This board is based on an FPGA (Field-Programmable Gate Array) chip from Xilinx, specifically the Artix-7 FPGA model.
