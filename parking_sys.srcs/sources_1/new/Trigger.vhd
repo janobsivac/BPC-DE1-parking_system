@@ -8,10 +8,10 @@ entity Trigger is
         N_PERIODS : integer := 3 -- Default number of clk periodes to generate one pulse
     );
     Port (
-        clk : in  STD_LOGIC;
-        rst       : in  STD_LOGIC;
-        trigger   : out STD_LOGIC;
-        en_in        : in std_logic
+        clk     : in  STD_LOGIC;  -- Vstup hodin
+        rst     : in  STD_LOGIC;  -- Vstup reset
+        trigger : out STD_LOGIC;  -- Výstupní signál impulzu
+        en_in   : in  std_logic   -- Vstup povolení čítání
     );
 end Trigger;
 
@@ -25,13 +25,13 @@ begin
     p_clk_enable : process(clk) is
     begin
     
-      if (rising_edge(clk) and en_in = '1') then 
-        if rst = '1' then
-            trigger_counter <= 0;
+      if (rising_edge(clk) and en_in = '1') then 		--reakce na nabeznou hranu hodinoveho signalu a vstupniho signalu enable
+        if rst = '1' then					--podmínka pro rst
+            trigger_counter <= 0;				--nastaveni hodnoty pro rst
 
-        elsif (trigger_counter < (N_PERIODS - 1)) then 
+        elsif (trigger_counter < (N_PERIODS - 1)) then 		
                                                                
-           trigger_counter <= trigger_counter + 1;
+           trigger_counter <= trigger_counter + 1;		--spusteny counter
          else
                                                                
            trigger_counter <= 0;
@@ -40,12 +40,12 @@ begin
         end if;
         
         if (en_in = '0') then
-                    trigger_counter <= 0;
+                    trigger_counter <= 0;			--reset čítače pokud není umožněno čítat (en_in)
         end if;
         
     end process p_clk_enable;
     
-    
+    -- Generování impulzu, když čítač dosáhne zadaného počtu period
     trigger <= '1' when (trigger_counter = N_PERIODS - 1) else '0';
 
 end Behavioral;
