@@ -1,0 +1,25 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Mon Apr 29 10:31:13 2024
+# Process ID: 7800
+# Current directory: C:/Users/246899/Downloads/parking_sys
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent388 C:\Users\246899\Downloads\parking_sys\parking_sys.xpr
+# Log file: C:/Users/246899/Downloads/parking_sys/vivado.log
+# Journal file: C:/Users/246899/Downloads/parking_sys\vivado.jou
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/246899/Downloads/parking_sys/parking_sys.xpr
+WARNING: [filemgmt 56-3] Default IP Output Path : Could not find the directory 'C:/Users/246899/Downloads/parking_sys/parking_sys.gen/sources_1'.
+Scanning sources...
+Finished scanning sources
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1704] No user IP repositories specified
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/appz/Xilinx/Vivado/2020.2/data/ip'.
+update_compile_order -fileset sources_1
+launch_simulation
+Command: launch_simulation 
+boost::filesystem::remove: The process cannot access the file because it is being used by another process: "C:/Users/246899/Downloads/parking_sys/parking_sys.sim/sim_1/behav/xsim/simulate.log"
+exit
+INFO: [Common 17-206] Exiting Vivado at Mon Apr 29 10:32:17 2024...
