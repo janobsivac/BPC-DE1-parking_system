@@ -19,7 +19,6 @@ architecture Behavioral of DistanceCalculation is
     signal sig_running : std_logic;
     signal counter : integer range 0 to 1000 :=0;
     signal result_counter : integer :=0;
-    signal result : integer :=0;
     signal echo_delayed : std_logic;
     signal vzdalenost : integer :=0;
     
@@ -49,11 +48,8 @@ begin
         elsif ( not echo and echo_delayed)='1' then       -- Detekce sestupné hrany echo signálu
             result_counter <= counter;			  -- ulozeni hodnoty
        
-       
-        result <= result_counter * 10;			  -- Škálování result_counteru pro získání výsledku v mikrosekundách
         
-        
-        vzdalenost <= ((result * 340) / 2); 		  -- Výpočet vzdálenosti na základě času letu echo pulzu
+        vzdalenost <= ((result_counter * 340) / 2); 		  -- Výpočet vzdálenosti na základě času letu echo pulzu
 
               
         if vzdalenost < 46 then 			  -- Maximální námi měřená vzdálenost    
