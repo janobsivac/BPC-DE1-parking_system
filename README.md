@@ -52,6 +52,8 @@ A component connected to a non-soldering field that sends a modified voltage fro
 ## Instructions
 ![IMG_7279](https://github.com/janobsivac/BPC-DE1-parking_system/assets/159461221/29c5c66d-a88f-455d-b63b-23012cf0997b)
 Link to video: https://youtube.com/shorts/ET7igXIws9A
+## Disclaimer
+Unfortunately, we were not able to put the project into operation. At first we were struggling with the problem that the trigger was sending us the wrong pulses. We were eventually able to fix that, but subsequently there was a problem with the echo not processing the signal, thus the distance calculation not working.
 ## References
 - https://github.com/tomas-fryza/vhdl-course/tree/master/lab8-project
 - https://digilent.com/reference/programmable-logic/nexys-a7/reference-manual
