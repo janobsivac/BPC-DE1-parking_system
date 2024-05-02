@@ -5,8 +5,8 @@ use ieee.math_real.all;
 
 entity Trigger is
  generic (
-        N_PERIODS : integer := 3 -- Default number of clk periodes to generate one pulse
-    );
+        N_PERIODS : integer := 6 -- Default number of clk periodes to generate one pulse
+    );                           -- Senzor prijima dalsi novy signal za 50us
     Port (
         clk     : in  STD_LOGIC;  -- Vstup hodin
         rst     : in  STD_LOGIC;  -- Vstup reset
